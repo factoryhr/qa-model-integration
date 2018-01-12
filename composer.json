@@ -1,0 +1,18 @@
+{
+    "name": "domagoj/questions-and-answers-model-integration",
+    "description": "Laravel package for implementing question sumbmission and replying.",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Domagoj",
+            "email": "domagoj.simic@factory.hr"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "BlueFactory\\QAModelIntegration": "src"
+        }
+    },
+}
