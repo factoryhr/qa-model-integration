@@ -1,5 +1,5 @@
 {
-    "name": "domagoj/questions-and-answers-model-integration",
+    "name": "plavatvornica/qa-model-integration",
     "description": "Laravel package for implementing question sumbmission and replying.",
     "type": "library",
     "authors": [
