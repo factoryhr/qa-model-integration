@@ -22,4 +22,9 @@ class Topic extends Model
     {
         return $this->hasMany('BlueFactory\QAModelIntegration\Models\Comment');
     }
+
+    public function categories()
+    {
+        return $this->belongsToMany('BlueFactory\QAModelIntegration\Models\TopicCategory', 'topics_to_topic_categories', 'topic_id', 'topic_category_id');
+    }
 }
