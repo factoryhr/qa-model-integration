@@ -17,11 +17,11 @@ class TopicCategory extends Model
 
     public function parent()
     {
-        return $this->belongsTo('BlueFactory\QAModelIntegration\Models\TopicCategory');
+        return $this->belongsTo('BlueFactory\QAModelIntegration\Models\TopicCategory', 'topic_category_id');
     }
 
     public function children()
     {
-        return $this->hasMany('BlueFactory\QAModelIntegration\Models\TopicCategory');
+        return $this->hasMany('BlueFactory\QAModelIntegration\Models\TopicCategory', 'topic_category_id');
     }
 }
