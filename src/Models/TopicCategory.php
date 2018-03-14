@@ -24,4 +24,14 @@ class TopicCategory extends Model
     {
         return $this->hasMany('BlueFactory\QAModelIntegration\Models\TopicCategory', 'topic_category_id');
     }
+
+    public function scopeLoadChildren($builder)
+    {
+        return $this->parent()->with('parent.parent.parent.parent');
+    }
+
+    public function scopeLoadParents($builder)
+    {
+        return $this->children()->with('children.children.children.children');
+    }
 }
