@@ -27,11 +27,11 @@ class TopicCategory extends Model
 
     public function scopeLoadChildren($builder)
     {
-        return $this->parent()->with('parent.parent.parent.parent');
+        return $builder->with('parent.parent.parent.parent');
     }
 
     public function scopeLoadParents($builder)
     {
-        return $this->children()->with('children.children.children.children');
+        return $builder->with('children.children.children.children');
     }
 }
