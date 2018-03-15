@@ -34,4 +34,20 @@ class TopicCategory extends Model
     {
         return $builder->with('children.children.children.children');
     }
+
+    public function scopeNotDescendantOf($builder, $id, $level)
+    {
+        return $builder->where(function($q) use ($id, $level) {
+            return $q->whereNull('topic_categories.root_category_id')
+                    ->orWhere(function($q1) use ($id) {
+                        return $q1->whereNotNull('topic_categories.root_category_id')
+                                ->where('topic_categories.root_category_id', '!=', $id);
+                    })
+                    ->orWhere(function($q1) use ($id, $level) {
+                        return $q1->whereNotNull('topic_categories.root_category_id')
+                                ->where('topic_categories.root_category_id', $id)
+                                ->where('topic_categories.level', '<=', $level);
+                    });
+        });
+    }
 }
