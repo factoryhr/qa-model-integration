@@ -8,7 +8,7 @@ class TopicCategory extends Model
 {
     protected $table = 'topic_categories';
 
-    protected $fillable = ['title', 'topic_category_id', 'level'];
+    protected $fillable = ['title', 'topic_category_id', 'level', 'root_category_id'];
 
     public function topic()
     {
